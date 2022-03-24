@@ -1,5 +1,5 @@
-resource "azurerm_resource_group" "rg" {
-  name     = "test-rg"
+resource "azurerm_resource_group" "rg-new" {
+  name     = "new-rg"
   location = "West Europe"
   tags =   var.tags
 }
