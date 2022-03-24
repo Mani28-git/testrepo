@@ -1,8 +1,13 @@
-resource "aws_instance" "ec2-instance" {
-  ami           = "ami-0d2aa5df6e106903e"
-  instance_type = "t2.small"
+resource "azurerm_resource_group" "rg" {
+  name     = "test-rg"
+  location = "West Europe"
+  tags =   var.tags
+}
 
-  tags = {
-    Name = "HelloWorld-dev"
+variable "tags" {
+  type = map(string)
+  default = {
+    env = "dev"
+    test = "10"
   }
 }
